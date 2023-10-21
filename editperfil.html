@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel=" shortcut icon" href="IMG/gota(1).png">
+    <title> SASVI</title>
+ 
+    <link rel="stylesheet" type="text/css" href="CSS/edit.css">
+    <link rel="stylesheet" href="CSS/teste2.css">
+    <link rel="stylesheet" href="CSS/menulg.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+    <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+
+<body id="body">
+    <header>
+        <nav class="nav-bar">
+            <div class="logo">
+                <img src="IMG/logo.png" alt="Logo GN" class="img_logo_header">
+            </div>
+            <div class="nav-list">
+                <ul>
+                    <li class="nav-item"><a href="indexlg.html" class="nav-link">INICIO</a></li>
+                    <li class="nav-item"><a href="mapalg.html" class="nav-link">MAPA</a></li>
+                    <li class="nav-item"><a href="agendalg.html" class="nav-link">AGENDAMENTO</a></li>
+                </ul>
+            </div>
+            <div class="container">
+                <div class="login-button">
+                    <button class="popup-button" type="submit" onclick="handlePopup(true)" class="cadastro">MINHA CONTA</button>
+                    <div class="popup" id="popup">
+    
+                        <button class="close-popup-button" type="submit" onclick="handlePopup(false)">
+                            X
+                        </button>
+                        <img class="imgusu2" src="IMG/usuario.png">
+                        <p class="title">USUÁRIO12</p>
+                
+                        <p class="desc">usuario12@gmail.com</p>
+                
+                        <a href=""><button class="open-popup-button" type="submit" >
+                            EDITAR PERFIL
+                        </button></a>
+                
+                        <a href=""><button class="open-popup-button2" type="submit" >
+                            HISTÓRICO
+                        </button></a>
+                
+                        <a href="index.html"><button class="open-popup-button3" type="submit" >
+                            SAIR DA CONTA
+                        </button></a>
+                    
+                  
+                        
+                    </div>
+               
+                </div>
+    
+    
+                <div class="mobile-menu-icon">
+                    <button onclick="menuShow()"><img class="icon" src="IMG/foto2.svg" alt=""></button>  
+                </div>
+            </nav>
+        </div>
+            <div class="mobile-menu">
+                <ul>
+                    <li class="nav-item"><a href="indexlg.html" class="nav-link">INICIO</a></li>
+                    <li class="nav-item"><a href="mapalg.html" class="nav-link">MAPA</a></li>
+                        <li class="nav-item"><a href="agendalg.html" class="nav-link">AGENDAMENTO</a></li>
+                </ul>
+    
+                <div class="login-button2">
+                    <a href=""><button>MEU PERFIL</button> </a>
+                    <a href="">  <button>HISTÓRICO</button> </a>
+                    <a href="index.html">  <button>SAIR DA CONTA</button> </a>
+                    
+                    
+                </div>
+                
+    
+        </div>
+            </div>
+        </header>
+        <script src="JS/script2.js"></script>
+        <script> 
+            const popup = document.getElementById('popup');
+    
+            function handlePopup(open) {
+                popup.classList[open ? 'add' : 'remove']('opened');
+            }
+        </script>
+       
+       
+        </div>
+        <div class="cordofundo">
+    <section class="seccion-perfil-usuario">
+        <div class="perfil-usuario-header">
+            
+                <div class="perfil-usuario-avatar">
+                    <img src="IMG/imgdoper.jpg" alt="img-avatar">
+                    
+                </div>
+               
+            
+        </div>
+        <div class="perfil-usuario-body">
+            <div class="perfil-usuario-bio">
+                <h3 class="titulo">XXXXX XXXXXX</h3>
+                <p class="texto"></p>
+            </div>
+            <div class="perfil-usuario-footer">
+                <ul class="lista-datos">
+                    <li><i class="icono fas fa-map-signs"></i> Celular: (XX)XXXXX-XXXX</li>
+                    <li><i class="icono fas fa-phone-alt"></i> Cpf: XXXXX-XXXX</li>
+                    <li><i class="icono fas fa-briefcase"></i> Email: XXXXXX@XXXX.COM</li>
+                </ul>
+                <ul class="lista-datos">
+                    <li><i class="icono fas fa-map-marker-alt"></i> Cartão Sus: XXX XXXX XXXXX XXXX</li>
+                    <li><i class="icono fas fa-calendar-alt"></i> Data de nascimento: 23/01/2006</li>
+                    
+                </ul>
+            </div>
+           
+        </div>
+    </section>
+ 
+
+</div>
+<!--====  End of tarjeta  ====-->
+<footer>
+    <div class="footer_content">
+    <div class="box_contato">
+        <h2 id="font_footer">ENTRE EM CONTATO:</h2>
+        <ul class="font_link">
+            <li><a href="#"><b>Telefone: </b> 12 99744-7598</a></li>
+            <li><a href="#"><b>Email: </b>tccsasvi@gmail.com</a></li>
+     <li><p><b>Horário de atendimento :</b> segunda a sexta<BR> das 8:00 ás 17:00hrs</p></a></li>
+
+<div class="social_media">
+     <a href="#" class="footer_link" id="instagram">
+    <i class="fa-brands fa-instagram"></i>
+     </a>
+     <a href="#" class="footer_link" id="facebook">
+        <i class="fa-brands fa-facebook"></i>
+         </a>
+         <a href="#" class="footer_link" id="whatsapp">
+            <i class="fa-brands fa-whatsapp"></i>
+             </a>
+</div>
+        </ul>
+    </div>
+    <div class="box_ref">
+    <h2 id="font_footer">REFERÊNCIAS:</h2>
+    <ul class="font_link">
+        <li><a href="#">Hemominas</a></li>
+        <li><a href="#">Prosangue</a></li>
+        
+
+    </ul>
+</div>
+    <div class="box_sobre">
+        <h2 id="font_footer2">SOBRE NÓS:</h2>
+        <P class="font_link">Nós somos alunos três alunos da instituição Centro de Educação Profissional Tancredo Neves e cursamos informática. 
+        A fim de agilizar o processo de agendamento 
+        desenvolvemos esse sistema para concluirmos o curso.</P>
+    </div>
+
+ </footer>
+ <div id="footer_copyright">
+    &#169
+    <p>2023 all rights reserved</p>
+</div>       
+</body>
+</html>

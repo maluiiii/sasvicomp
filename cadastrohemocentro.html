@@ -1,0 +1,219 @@
+    <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="CSS/cadastrohemocentro.css">   
+    <title> Cadastro Hemocentro</title>
+</head>
+<body>
+    <div class="campo">
+
+        <form action="#" method="post" onsubmit="senhaOK">
+
+            <div class="form-header">
+
+                <div class="title">
+                    <h1 class="logintittle">Cadastro</h1>
+                    <p>Crie sua conta!</p>
+                    <hr>
+                </div>
+
+                
+            </div>
+
+          
+                <div class="input-group1">
+                <div class="input-box1">
+
+                    <input id="nome" type="text" name="txtnomehemo" placeholder="Nome da instituição" required>	
+                </div>
+                <div class="input-box1">
+                    <input id="nome" type="text" name="txtcnpj" placeholder="CNPJ" required>	
+                </div>
+
+                </div>
+                <div class="input-group1">
+                    <div class="input-box1">
+    
+                        <input id="nome" type="text" name="txtcidade" placeholder="Cidade" required>	
+                    </div>
+                    <div class="input-box1">
+                        <input id="nome" type="text" name="txtbairro" placeholder="Bairro" required>	
+                    </div>
+                    
+                    
+                    </div>
+                <div class="input-group3">
+                    <div class="input-box3">
+    
+                        <input id="nome" type="text" name="txtnumero" placeholder="Número" required>	
+                    </div>
+                    <div class="input-box3">
+                        <input id="nome" type="text" name="txtcep" placeholder="CEP" required>	
+                    </div>
+                    <div class="oi" >
+                       
+                        <select class="input-box10" name="estado">
+                            <option value="AC">AC</option>
+                            <option value="AL">AL</option>
+                            <option value="AP">AP</option>
+                            <option value="AM">AM</option>
+                            <option value="BA">BA</option>
+                            <option value="CE">CE</option>
+                            <option value="DF">DF</option>
+                            <option value="ES">ES</option>
+                            <option value="GO">GO</option>
+                            <option value="MA">MA</option>
+                            <option value="MT">MT</option>
+                            <option value="MS">MS</option>
+                            <option value="MG">MG</option>
+                            <option value="PA">PA</option>
+                            <option value="PB">PB</option>
+                            <option value="PR">PR</option>
+                            <option value="PE">PE</option>
+                            <option value="PI">PI</option>
+                            <option value="RJ">RJ</option>
+                            <option value="RN">RN</option>
+                            <option value="RS">RS</option>
+                            <option value="RO">RO</option>
+                            <option value="RR">RR</option>
+                            <option value="SC">SC</option>
+                            <option value="SP">SP</option>
+                            <option value="SE">SE</option>
+                            <option value="TO">TO</option>
+                            <option value="EX">Estrangeiro</option>
+                            </select>
+                        	
+                    </div>
+                    
+                    </div>
+                   
+                    
+                        
+                <div class="input-group">
+
+                <div class="input-box">
+                    <input type="text" name="txtcelular" id="celular" placeholder="Celular (XX) XXXXX-XXXX" required>
+                   
+              </div>
+             
+                
+                
+                <div class="input-box">
+                   
+
+                    <input type="email" name="txtemail" id="email" placeholder="Email" required>
+                </div>
+              
+                <div class="input-box">
+                    
+
+                    <input type="password" name="txtsenha" id="senha" placeholder="Senha" required onchange='conferesenha();''> 
+                      
+                    <img id="olho" src="LOGIN/iMG_LOGIN/aberto.png" class="eye"></img>
+    
+             </div> 
+
+
+             <div class="input-box">
+                <input type="password" name="txtsenhaconfirma" id="senha" placeholder="Confirmar senha" required onchange='conferesenha();'>
+                  
+                <img id="olho" src="LOGIN/iMG_LOGIN/aberto.png" class="eye"></img>
+            
+
+               </div>    
+            </div>
+            <div class="input-group13">
+
+                <label for="firstname" class="date1">Horários de funcionamento</label>
+                <div class="input-box11">
+                    
+
+                <input id="firstname" type="time" name="txthorarioabertura" placeholder="" required>
+                
+                <label for="firstname" class="date2"> ás</label>
+               
+                <input id="firstname" type="time" name="txthorariofechadura" placeholder="" required>
+            </div>
+                   
+            
+        
+
+
+                </div>
+             <p class="date"> Dias de funcionamento</p>
+                    <div class="input-group10">
+                        <div class="seg1">
+                            <input type="checkbox" id="scales" name="txtsegunda" />
+                        </div>
+                            <label class="seg" for="seg">Seg</label>
+                            <input type="checkbox" id="scales" name="txtterca"  />
+                            <label class="seg" for="seg">Ter</label>
+                            <input type="checkbox" id="scales" name="txtquarta" />
+                            <label class="seg" for="seg">Qua</label>
+                            <input type="checkbox" id="scales" name="txtquinta"  />
+                            <label class="seg" for="seg">Qui</label>
+                            <input type="checkbox" id="scales" name="txtsexta"  />
+                            <label class="seg" for="seg">Sex</label>
+                            <input type="checkbox" id="scales" name="txtsabado"  /> 
+                            <label class="seg" for="seg">Sab</label>
+                          
+                      
+                    </div>
+            <p class="fim">As pessoas que usam nosso serviço podem ter enviado suas informações de contato para o
+                 sistema Sasvi.<a class="tirar" href=""> Saiba mais</a></p>
+                 <p class="fim"> Ao clicar em Cadastre-se, você concorda com nossos<a class="tirar" href="">  Termos, Política de Privacidade e
+                      Política de Cookies.</a>ê poderá receber notificações por SMS e cancelar isso quando quiser.</p>
+        
+              <a href=" "><input class="continuar" type="submit" value="Cadastre-se"> </a>
+           
+        </form>
+    </div>
+    <script>
+         let btn = document.querySelector('.eye');
+
+btn.addEventListener('click', function() {
+
+    let input = document.querySelector('#senha');
+
+
+    if(input.getAttribute('type') == 'password') {
+        input.setAttribute('type', 'text');
+        document. getElementById('olho').src = "LOGIN/iMG_LOGIN/aberto.png";
+
+    } 
+    else {
+        input.setAttribute('type', 'password');
+        document. getElementById('olho').src = "LOGIN/iMG_LOGIN/fechado.png";
+
+    }
+    
+
+        function conferesenha(){
+            const senha = document.querySelector('input[name=txtsenha]');
+            const confirma =  document.querySelector('input[name=txtsenhaconfirma]');
+
+            if(confirma.value=== senha.value){
+confirma.setCustomValidity('');
+            }else{
+                confirma.setCustomValidity('Senhas não conferem');
+            }
+        }
+        function senhaOK(){
+            alert("Senhas conferem")
+        }
+
+
+      
+        });
+        
+        
+        
+
+    </script>
+    
+    
+</body>
+</html>

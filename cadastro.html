@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="CSS/cadastro.css">
+    <title>Cadastro</title>
+</head>
+<body>
+    <div class="campo">
+
+        <form action="PHP/recebe_cadastro_usu.php" method="post" onsubmit="senhaOK">
+
+            <div class="form-header">
+
+                <div class="title">
+                    <h1 class="logintittle">Cadastro</h1>
+                    <p>Crie sua conta!</p>
+                    <hr>
+                </div>
+
+                
+            </div>
+
+          
+                <div class="input-group1">
+                <div class="input-box1">
+
+                    <input id="nome" type="text" name="txtnome" placeholder="Nome" class="required" oninput="nameValidate()" required>
+
+                </div>
+
+                <div class="input-box1">
+                    <input id="nome" type="text" name="txtsobrenome" placeholder="Sobrenome" riquered >	
+                </div>
+
+                </div>
+
+                <div class="input-group">
+
+                    <p class="date"> Data de nascimento</p>
+
+                <div class="input-box">
+                    <input id="dataNascimento" type="date" name="txtdata" onkeyup="verificarIdade()" required>
+                   <div class="mensg">
+                    <small id="mensagemdata" class="mdata"></small>
+                </div>
+                  
+                </div>
+
+                <div class="input-box input-cpf">
+                    <input onkeypress="mascara_cpf()" autocomplete="off" maxlength="14" type="text" name="txtcpf" id="cpf" placeholder="Cpf" onchange='validarCPF()' required>
+                    <small id="iconeFeedback2" class="valid_cel"></small>
+                   
+              </div>
+              <div class="input-box">
+                <input onkeypress="mascaraCartaoSus()" maxlength="18"  type="text" name="txtsus" id="sus" placeholder="Número do Sus XXX XXXX XXXXX XXXX" required>
+               
+          </div>
+                <div class="input-box input-celular">
+                    <input onkeypress="mascaraTelefone()" maxlength="15" type="text" name="txtcelular" id="celular" placeholder="Celular (XX) XXXXX-XXXX" onkeypress='validarNumeroCelularComDDD()' required >
+                    <small id="iconeFeedback" class="valid_cel"></small>
+                </div>
+                <div class="date">
+                    <p>Tipo Sanguíneo</p>
+                </div>
+                <div class="oi" >
+                   
+                    <select class="input-box11" name="tipo">
+                            <option  value="A+"> A+</option>
+                            <option  value="A-"> A-</option>
+                            <option  value="B+"> B+</option>
+                            <option  value="B-"> B-</option>
+                            <option  value="AB+"> AB+</option>
+                            <option  value="AB-"> AB-</option>
+                            <option  value="O+"> O+</option>
+                            <option  value="O-"> O-</option>
+                            <option  value="NÃO SEI MEU TIPO"> NÃO SEI MEU TIPO </option>
+                            </select>
+                        
+                </div>
+                <div class="input-box">
+                   
+
+                    <input type="email" name="txtemail" id="email" placeholder="Email" required >
+
+                </div>
+              
+                <div class="input-box">
+                    
+
+                    <input type="password" name="txtsenha" id="senha" placeholder="Senha"  onchange='conferesenha();' required> 
+                      
+                    <img id="olho" src="LOGIN/iMG_LOGIN/aberto.png" class="eye"></img>
+    
+             </div> 
+
+
+             <div class="input-box">
+                <input type="password" name="txtsenhaconfirma" id="csenha" placeholder="Confirmar senha"  onchange='conferesenha();' required>
+                  
+                <img id="colho" src="LOGIN/iMG_LOGIN/aberto.png" class="eye"></img>
+            
+
+               </div>    
+            </div>
+            
+            <p class="fim">As pessoas que usam nosso serviço podem ter enviado suas informações de contato para o
+                 sistema Sasvi.<a class="tirar" href=""> Saiba mais</a></p>
+                 <p class="fim"> Ao clicar em Cadastre-se, você concorda com nossos<a class="tirar" href="">  Termos, Política de Privacidade e
+                      Política de Cookies.</a>ê poderá receber notificações por SMS e cancelar isso quando quiser.</p>
+        
+              <a href=" "><input class="continuar" type="submit" name="submit" value="Cadastre-se" > </a>
+           
+        </form>
+    </div>
+    <script>
+
+        let btn = document.querySelector('.eye');
+
+       btn.addEventListener('click', function() {
+
+
+           let input = document.querySelector('#senha');
+       
+
+       if(input.getAttribute('type') == 'password') {  
+           input.setAttribute('type', 'text');
+           document. getElementById('olho').src = "LOGIN/iMG_LOGIN/aberto.png";
+
+       } 
+       else {
+           input.setAttribute('type', 'password');
+           document. getElementById('olho').src = "LOGIN/iMG_LOGIN/fechado.png";
+
+       }
+
+       });
+
+       let cbtn = document.querySelector('#colho');
+
+       cbtn.addEventListener('click', function() {
+
+
+           let cinput = document.querySelector('#csenha');
+       
+
+       if(cinput.getAttribute('type') == 'password') {
+           cinput.setAttribute('type', 'text');
+           document. getElementById('colho').src = "LOGIN/iMG_LOGIN/aberto.png";
+
+       } 
+       else {
+           cinput.setAttribute('type', 'password');
+           document. getElementById('colho').src = "LOGIN/iMG_LOGIN/fechado.png";
+
+       }
+
+       });
+
+          
+
+
+           
+
+           function conferesenha(){
+                        const senha = document.querySelector('input[name=txtsenha]');
+                       const confirma =  document.querySelector('input[name=txtsenhaconfirma]');
+
+               if(confirma.value=== senha.value){
+               confirma.setCustomValidity('');
+
+               }else{
+               confirma.setCustomValidity('Senhas não conferem');
+               }
+       
+               function senhaOK(){
+               alert("Senhas conferem")
+               }
+           }
+
+    function validarCPF() {
+
+           const cpf = document.getElementById('cpf').value.replace(/[^\d]/g, ''); // Remove caracteres não numéricos
+           if (cpf.length !== 11 || cpf.match(/(\d)\1{10}/)) {
+               
+               document.getElementById('iconeFeedback2').textContent = "CPF inválido";
+               return;
+           }
+
+           // Calcula os dígitos verificadores
+           let soma = 0;
+
+           for (let i = 0; i < 9; i++) {
+               soma += parseInt(cpf.charAt(i)) * (10 - i);
+           }
+           
+           let resto = soma % 11;
+           let digito1 = (resto < 2) ? 0 : 11 - resto;
+
+           soma = 0;
+           for (let i = 0; i < 10; i++) {
+               soma += parseInt(cpf.charAt(i)) * (11 - i);
+           }
+
+           resto = soma % 11;
+           let digito2 = (resto < 2) ? 0 : 11 - resto;
+
+           if (parseInt(cpf.charAt(9)) === digito1 && parseInt(cpf.charAt(10)) === digito2) {
+               iconeFeedback2.innerHTML = "✅"; // Símbolo de "correto"
+                iconeFeedback2.style.color = "green"; // Cor verde
+           } else {
+               iconeFeedback2.innerHTML = "❌"; // Símbolo de "incorreto"
+               iconeFeedback2.style.color = "red"; // Cor vermelha
+           }
+       }
+
+       function validarNumeroCelularComDDD(celular) {
+           celular = document.getElementById('celular');
+ // Expressão regular para verificar o formato de um número de celular com DDD
+ var regex = /^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$/;
+
+ if (regex.test(celular.value)) {
+   iconeFeedback.innerHTML = "✅"; // Símbolo de "correto"
+   iconeFeedback.style.color = "green"; // Cor verde
+ } else {
+   iconeFeedback.innerHTML = "❌"; // Símbolo de "incorreto"
+   iconeFeedback.style.color = "red"; // Cor vermelha
+ }
+
+   }
+
+   
+   function mascara_cpf(){
+
+var maskcpf = document.getElementById('cpf')
+   if(maskcpf.value.length == 3 || cpf.value.length == 7){
+       maskcpf.value += "."
+   } else if (maskcpf.value.length == 11) {
+       cpf.value += "-"
+   }
+}
+
+function mascaraTelefone() {
+   var telefone = document.getElementById('celular');
+   var valor = telefone.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+   var tamanho = valor.length;
+
+   if (tamanho === 11) {
+       telefone.value = valor.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+   } else if (tamanho === 10) {
+       telefone.value = valor.replace(/(\d{2})(\d{4})(\d{4})/, '($1) $2-$3');
+   } else if (tamanho === 9) {
+       telefone.value = valor.replace(/(\d{5})(\d{4})/, '$1-$2');
+   } else if (tamanho === 8) {
+       telefone.value = valor.replace(/(\d{4})(\d{4})/, '$1-$2');
+   } // Você pode adicionar mais condições conforme necessário
+}
+
+function mascaraCartaoSus() {
+   var cartaoSus = document.getElementById('sus');
+   var valor = cartaoSus.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+   var tamanho = valor.length;
+
+   if (tamanho <= 3) {
+       cartaoSus.value = valor;
+   } else if (tamanho <= 7) {
+       cartaoSus.value = valor.substring(0, 3) + ' ' + valor.substring(3);
+   } else if (tamanho <= 11) {
+       cartaoSus.value = valor.substring(0, 3) + ' ' + valor.substring(3, 7) + ' ' + valor.substring(7);
+   } else if (tamanho <= 15) {
+       cartaoSus.value = valor.substring(0, 3) + ' ' + valor.substring(3, 7) + ' ' + valor.substring(7, 11) + ' ' + valor.substring(11);
+   }
+}
+
+function verificarIdade() {
+     var dataNascimentoInput = document.getElementById("dataNascimento");
+     var mensagem = document.getElementById("mensagemdata");
+     
+     var dataNascimento = new Date(dataNascimentoInput.value);
+     var hoje = new Date();
+     var idade = hoje.getFullYear() - dataNascimento.getFullYear();
+
+     // Verifique se a data de nascimento é válida e a idade é maior que 16
+     if (!isNaN(dataNascimento.getTime()) && idade > 16) {
+       dataNascimentoInput.classList.remove("invalid");
+       dataNascimentoInput.classList.add("valid");
+       mensagem.textContent = "";
+     } else {
+       dataNascimentoInput.classList.remove("valid");
+       dataNascimentoInput.classList.add("invalid");
+       mensagem.textContent = " A idade mínima para doação é 16 anos.";
+     }
+   }
+
+
+
+
+    
+
+   </script>
+
+</body>
+</html>
